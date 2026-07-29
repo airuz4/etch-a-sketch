@@ -30,6 +30,8 @@ container.addEventListener('mouseover',(e) => {
 let sizeBtn = document.querySelector('#sizeBtn');
 
 sizeBtn.addEventListener(('click'), () => {
+    while (container.firstChild)
+        container.removeChild(container.firstChild);
     let input = Number(prompt("Enter a number from 1 - 100", ''));
     if (isNaN(input) || input > 100 || input < 0){
             alert('enter a valid value');
