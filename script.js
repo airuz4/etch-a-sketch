@@ -2,14 +2,15 @@ let container = document.querySelector('.container');
 let containerSize  = 500;
 container.style.width = `${containerSize}px`;
 container.style.height = `${containerSize}px`;
-
+const dimensions = 2;
+const borderPx = 2;
 
 function createGrid(number){
-    let boxCount = number ** 2;
+    let boxCount = number ** dimensions;
         for (let i = 0; i < boxCount; i++){
             let box = document.createElement('div');
             box.setAttribute('class','box');
-            box.style.flex = `1 1 ${containerSize / number - 2}px`
+            box.style.flex = `1 1 ${containerSize / number - borderPx}px`
             container.appendChild(box);
         }
 }
